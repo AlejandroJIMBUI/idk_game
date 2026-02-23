@@ -1,0 +1,27 @@
+flowchart LR
+    Inicio[Enemigo derrotado] --> Experiencia[Gana EXP]
+    Experiencia --> Umbral{¿EXP acumulada >= umbral?}
+    
+    Umbral -->|No| Fin([Fin])
+    Umbral -->|Sí| Subida[¡Sube de nivel!]
+    
+    Subida --> Puntos[Gana puntos de habilidad]
+    Puntos --> Decision{Jugador decide dónde invertir}
+    
+    Decision -->|Opción 1| Fuerza[Aumenta daño físico]
+    Decision -->|Opción 2| Defensa[Aumenta resistencia]
+    Decision -->|Opción 3| Velocidad[Aumenta velocidad movimiento]
+    Decision -->|Opción 4| Clase[Atributos de clase]
+    
+    Clase --> ClaseDecision{¿Qué mejorar?}
+    ClaseDecision -->|Subir nivel clase| NivelClase[Aumenta nivel de clase]
+    ClaseDecision -->|Nuevo estado| EstadoClase[Desbloquea estado especial]
+    
+    Fuerza --> Stats[Stats actualizados]
+    Defensa --> Stats
+    Velocidad --> Stats
+    NivelClase --> Stats
+    EstadoClase --> Stats
+    
+    Stats --> ResetEXP[Reset contador EXP]
+    ResetEXP --> Fin

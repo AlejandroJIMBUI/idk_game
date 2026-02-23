@@ -1,0 +1,16 @@
+graph TB
+    A[Inicio del Sprint] --> B{Reunión de Planificación}
+    B --> C[Asignación de Tareas]
+    C --> D[Persona A: Desarrollo Mecánicas]
+    C --> E[Persona B: Desarrollo Contenido]
+    D --> F[Commit a Rama Desarrollo]
+    E --> F
+    F --> G{Code Review}
+    G -->|Aprobado| H[Merge a Rama Principal]
+    G -->|Cambios requeridos| D
+    H --> I[Pruebas de Integración]
+    I --> J{¿Hay errores?}
+    J -->|Sí| K[Registro de Issues]
+    J -->|No| L[Build Jugable]
+    K --> D
+    L --> M[Fin del Sprint]
