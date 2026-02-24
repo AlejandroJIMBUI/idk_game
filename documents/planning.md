@@ -45,7 +45,7 @@ Crear una experiecia de juego que combine la precisión y estetica de los juegos
 - Lenguajes: C#
 - Diseño Grafico: Libresprite, Affinity
 - Musica y SFX: Ableton Live 12 Suite
-- Hardware: Computadora con capacidad de desarrollo (GPU RTX/Intel Arc/Radeon para shaders)
+- Hardware: Computadora con capacidad de desarrollo (GPU para shaders)
 <br></br>
 
 # 5. Gobernanza, políticas, presupuesto y programación
