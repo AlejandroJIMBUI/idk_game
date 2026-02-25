@@ -4,7 +4,7 @@
 Crear una experiecia de juego que combine la precisión y estetica de los juegos plataforma junto con la progresion caracteristica de los ARPG (Action Role-Playing Game)
 
 ### *Objetivos Principales*:
-- Desarrollar un producto minimo viable (MVP) para aprobar la asignaruta.
+- Desarrollar un producto minimo viable (PMV) para alcanzar jugadores interezados en juegos ARPG.
 - Demostrar conceptos de POO (herencia, polimorfismo, encapsulamiento, abstracción)
 - Crear una experiencia jugable con al menos 5-10 niveles funcionales
 - Implementar un sistema de combate basico junto con un arbol de pasivas para leveo basico ARPG
