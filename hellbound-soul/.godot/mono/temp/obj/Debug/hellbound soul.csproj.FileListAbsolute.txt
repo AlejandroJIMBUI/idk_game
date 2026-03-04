@@ -16,3 +16,21 @@ C:\Users\andre\Documents\proyectoJuego\idk_game\hellbound-soul\.godot\mono\temp\
 C:\Users\andre\Documents\proyectoJuego\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.pdb
 C:\Users\andre\Documents\proyectoJuego\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.genruntimeconfig.cache
 C:\Users\andre\Documents\proyectoJuego\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\ref\hellbound soul.dll
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\bin\Debug\hellbound soul.deps.json
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\bin\Debug\hellbound soul.runtimeconfig.json
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\bin\Debug\hellbound soul.dll
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\bin\Debug\hellbound soul.pdb
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.csproj.AssemblyReference.cache
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.AssemblyInfoInputs.cache
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.AssemblyInfo.cs
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.csproj.CoreCompileInputs.cache
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.sourcelink.json
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellboun.D47741F6.Up2Date
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.dll
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\refint\hellbound soul.dll
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.pdb
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\hellbound soul.genruntimeconfig.cache
+C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\.godot\mono\temp\obj\Debug\ref\hellbound soul.dll
