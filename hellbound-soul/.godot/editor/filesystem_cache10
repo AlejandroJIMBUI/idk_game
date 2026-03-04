@@ -1,9 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1772637327
+::res://::1772653047
 icon.svg::CompressedTexture2D::125825638215666257::1772593803::1772637133::1::::<><><>0<>0<>5342cfe8c957f986c1fae868e033cc6b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://player/::1772631995
-Player.cs::CSharpScript::2657551152941478757::1772631995::0::1::::<>Area2D<><>0<>0<><>::
-player.tscn::PackedScene::3909605343506805856::1772631995::0::1::::<><><>0<>0<><>::uid://d0uejnbrhr12q::::res://sprites/down/downangel.png<>uid://bd4lqj8dn7dv6::::res://player/Player.cs<>uid://biilxrgs8bnon::::res://sprites/down/downangel2.png<>uid://xxgfc6a87l58::::res://sprites/right/rightangel.png<>uid://cdulnqab4wqxx::::res://sprites/right/rightangel2.png<>uid://bkkuy5rp6w3ou::::res://sprites/right/rightangel3.png<>uid://co0pc2fa3nju5::::res://sprites/up/angelup2.png<>uid://4rmdi3wbx18c::::res://sprites/up/angelup.png
+::res://levels/::1772643005
+level_1.tscn::PackedScene::1785681165205490922::1772643005::0::1::::<><><>0<>0<><>::uid://bvx3vm5vr0gvg::::res://player/player.tscn
+::res://player/::1772639612
+Player.cs::CSharpScript::2657551152941478757::1772641789::0::1::::<>Area2D<><>0<>0<><>::
+player.tscn::PackedScene::3909605343506805856::1772639612::0::1::::<><><>0<>0<><>::uid://d0uejnbrhr12q::::res://sprites/down/downangel.png<>uid://bd4lqj8dn7dv6::::res://player/Player.cs<>uid://biilxrgs8bnon::::res://sprites/down/downangel2.png<>uid://xxgfc6a87l58::::res://sprites/right/rightangel.png<>uid://cdulnqab4wqxx::::res://sprites/right/rightangel2.png<>uid://bkkuy5rp6w3ou::::res://sprites/right/rightangel3.png<>uid://co0pc2fa3nju5::::res://sprites/up/angelup2.png<>uid://4rmdi3wbx18c::::res://sprites/up/angelup.png
+::res://resources/::1772642989
 ::res://sprites/::1772631995
 ::res://sprites/down/::1772637133
 downangel2.png::CompressedTexture2D::2965156318037852533::1772631995::1772637133::1::::<><><>0<>0<>d2b2f83cce8f08829ff923689c9b83f1<>res://.godot/imported/downangel2.png-c1cecb4f4f98f3cfa88d2c4f55725d33.ctex::
