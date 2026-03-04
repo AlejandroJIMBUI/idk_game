@@ -1,7 +1,7 @@
 is_global = true
 build_property.GodotDisabledSourceGenerators = 
-build_property.GodotProjectDir = C:\Users\andre\Documents\proyectoJuego\idk_game\hellbound-soul\
-build_property.GodotProjectDirBase64 = QzpcVXNlcnNcYW5kcmVcRG9jdW1lbnRzXHByb3llY3RvSnVlZ29caWRrX2dhbWVcaGVsbGJvdW5kLXNvdWxc
+build_property.GodotProjectDir = C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\
+build_property.GodotProjectDirBase64 = QzpcVXNlcnNcYnVpdHJcT25lRHJpdmVcRG9jdW1lbnRzXEFyY2hpdmVzXFByb2plY3RzXGlka19nYW1lXGhlbGxib3VuZC1zb3VsXA==
 build_property.GodotSourceGenerators = 
 build_property.IsGodotToolsProject = 
 build_property.TargetFramework = net8.0
@@ -15,7 +15,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = hellboundsoul
-build_property.ProjectDir = C:\Users\andre\Documents\proyectoJuego\idk_game\hellbound-soul\
+build_property.ProjectDir = C:\Users\buitr\OneDrive\Documents\Archives\Projects\idk_game\hellbound-soul\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
