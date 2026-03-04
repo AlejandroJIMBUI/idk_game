@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bvx3vm5vr0gvg"]
+
+[ext_resource type="Texture2D" uid="uid://bxxu0yhw4n2xv" path="res://up.png" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://wh0ty3mksioi" path="res://walk.png" id="2_g1dw6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yw30f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rkbax")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g1dw6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D" unique_id=1163275228]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1162514623]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_yw30f")
+animation = &"up"

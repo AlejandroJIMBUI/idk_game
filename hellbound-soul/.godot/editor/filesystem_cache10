@@ -1,0 +1,7 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1772595844
+icon.svg::CompressedTexture2D::125825638215666257::1772593803::1772593813::1::::<><><>0<>0<>5342cfe8c957f986c1fae868e033cc6b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+up.png::CompressedTexture2D::4049505032827082823::1772595831::1772595831::1::::<><><>0<>0<>44ca6b0ee36cad62d4ec6f850b616a52<>res://.godot/imported/up.png-e05d8ef68afaab1f2a12687d88973546.ctex::
+walk.png::CompressedTexture2D::1560158363592718260::1772595844::1772595844::1::::<><><>0<>0<>eb25ad403700b1116446355406a9d78c<>res://.godot/imported/walk.png-9e2b3f0687548f2d45a4214880a644d7.ctex::
+::res://player/::1772595803
+player.tscn::PackedScene::3909605343506805856::1772595157::0::1::::<><><>0<>0<><>::
