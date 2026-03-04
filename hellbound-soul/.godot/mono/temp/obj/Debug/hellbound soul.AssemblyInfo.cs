@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("hellbound soul")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a9f3ab8f7cfb27d0ce7fd7bad795bc3e1b870a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61c1c785468e7d48be9a7e89bc67537e515ee667")]
 [assembly: System.Reflection.AssemblyProductAttribute("hellbound soul")]
 [assembly: System.Reflection.AssemblyTitleAttribute("hellbound soul")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
