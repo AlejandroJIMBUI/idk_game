@@ -45,7 +45,7 @@ public partial class Player : Area2D
 	if (gameFPS = 60)
 		delta = 0.016
 
-	D = 1/FPS
+	Formula: D = 1/FPS
 	*/
 	public override void _Process(double delta)
 	{
@@ -66,7 +66,7 @@ public partial class Player : Area2D
 			{
 				// Cuando se llega al objetivo
 				_isMovingToTarget = false;
-				Position = _targetPosition; // Se ajusta a la posici+on exacta
+				Position = _targetPosition; // Se ajusta a la posicion exacta
 			}
 		}
 
