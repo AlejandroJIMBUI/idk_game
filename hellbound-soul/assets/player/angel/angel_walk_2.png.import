@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkkuy5rp6w3ou"
-path="res://.godot/imported/rightangel3.png-69da5df18ff246308d2af9d9fa07cc0b.ctex"
+uid="uid://croaurx4icj28"
+path="res://.godot/imported/angel_walk_2.png-5e1720c2991780dbe7eb67a9614fd7b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/right/rightangel3.png"
-dest_files=["res://.godot/imported/rightangel3.png-69da5df18ff246308d2af9d9fa07cc0b.ctex"]
+source_file="res://assets/player/angel/angel_walk_2.png"
+dest_files=["res://.godot/imported/angel_walk_2.png-5e1720c2991780dbe7eb67a9614fd7b0.ctex"]
 
 [params]
 

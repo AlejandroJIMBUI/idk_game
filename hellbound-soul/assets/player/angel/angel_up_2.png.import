@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0uejnbrhr12q"
-path="res://.godot/imported/downangel.png-06e03dce8c7462dfef98b66c69519cea.ctex"
+uid="uid://my2y16fibnw3"
+path="res://.godot/imported/angel_up_2.png-2ac640a5309a6bee64a48e5e3689e1e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/down/downangel.png"
-dest_files=["res://.godot/imported/downangel.png-06e03dce8c7462dfef98b66c69519cea.ctex"]
+source_file="res://assets/player/angel/angel_up_2.png"
+dest_files=["res://.godot/imported/angel_up_2.png-2ac640a5309a6bee64a48e5e3689e1e2.ctex"]
 
 [params]
 
