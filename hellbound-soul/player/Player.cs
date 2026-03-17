@@ -4,74 +4,103 @@ using System;
 public partial class Player : Area2D
 {
 	[Export]
-	public int Speed { get; set; } = 400; // How fast the player will move (pixels/sec).
-
+	public int Speed { get; set; } = 300; // How fast the player will move (pixels/sec).
 	public Vector2 ScreenSize; // Size of the game window.
-	// Called when the node enters the scene tree for the first time.
-	
+
+	private Vector2 _targetPosition;
+	private bool _isMovingToTarget = false;
+	private const float ARRIVAL_THRESHOLD = 5.0f; // Distancia a la que se considera "llegado" (5.0"f" --> se define como f para evitar errores de compilacion [f = float])
+
 	public override void _Ready()
 	{
 		ScreenSize = GetViewportRect().Size;
+		_targetPosition = Position; // Inicializa el objetivo en la posicion actual
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{	 var velocity = Vector2.Zero; // The player's movement vector.
-
-	if (Input.IsActionPressed("move_right"))
+	public override void _Input(InputEvent @event)
 	{
-		velocity.X += 1;
-	}
-
-	if (Input.IsActionPressed("move_left"))
-	{
-		velocity.X -= 1;
-	}
-
-	if (Input.IsActionPressed("move_down"))
-	{
-		velocity.Y += 1;
-	}
-
-	if (Input.IsActionPressed("move_up"))
-	{
-		velocity.Y -= 1;
-	}
-
-	var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-
-	if (velocity.Length() > 0)
-	{
-		velocity = velocity.Normalized() * Speed;
-		animatedSprite2D.Play();
-	}
-	else
-	{
-		animatedSprite2D.Stop();
-	}
-		Position += velocity * (float)delta;
-		Position = new Vector2(
-		x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
-		y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
-		);
-	if (velocity.X != 0)
+		// Detecta si se hizo click o se mantuvo el boton izq del mouse
+		if (@event is InputEventMouseButton mouseButton)
 		{
-			animatedSprite2D.Animation = "walk";
-			animatedSprite2D.FlipV = false;
-			// See the note below about the following boolean assignment.
-			animatedSprite2D.FlipH = velocity.X < 0;
-		}
-		else if (velocity.Y != 0)
-		{
-			animatedSprite2D.Animation = "up";
-			if(velocity.Y > 0)
+			if (mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
 			{
-				animatedSprite2D.Animation = "down";
+				// Convierte el click en la posicin de la pantalla a la posicion en el mundo
+				// screen(1920*1080) --> gameCamera(same to the screen)
+				_targetPosition = GetGlobalMousePosition();
+				_isMovingToTarget = true;
 			}
-			
 		}
-		
-		
+
+		// Mientras se mantiene el click izq, se sigue actualizando el objetivo en la posicion del mouse
+		if (@event is InputEventMouseMotion && Input.IsMouseButtonPressed(MouseButton.Left))
+		{
+			_targetPosition = GetGlobalMousePosition();
+			_isMovingToTarget = true;
+		}
 	}
-	
+
+	/*
+	Delta = tiempo transcurrido desde el frame anterior (secs)
+	ej.
+	if (gameFPS = 60)
+		delta = 0.016
+
+	Formula: D = 1/FPS
+	*/
+	public override void _Process(double delta)
+	{
+		var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		var velocity = Vector2.Zero;
+
+		if (_isMovingToTarget)
+		{
+			Vector2 direction = _targetPosition - Position;
+			float distance = direction.Length();
+
+			if (distance > ARRIVAL_THRESHOLD)
+			{
+				// Cuando se avanza hacia el objetivo
+				velocity = direction.Normalized() * Speed;
+			}
+			else
+			{
+				// Cuando se llega al objetivo
+				_isMovingToTarget = false;
+				Position = _targetPosition; // Se ajusta a la posicion exacta
+			}
+		}
+
+		// --- Animation logic ---
+		if (velocity.Length() > 0)
+		{
+			animatedSprite2D.Play();
+
+			if (Mathf.Abs(velocity.X) >= Mathf.Abs(velocity.Y))
+			{
+				// Horizontal movement dominates
+				animatedSprite2D.Animation = "walk";
+				animatedSprite2D.FlipV = false;
+				animatedSprite2D.FlipH = velocity.X < 0;
+			}
+			else
+			{
+				// Vertical movement dominates
+				animatedSprite2D.FlipH = false;
+				animatedSprite2D.Animation = velocity.Y > 0 ? "down" : "up";
+			}
+		}
+		else
+		{
+			animatedSprite2D.Stop();
+		}
+
+		// Apply movement
+		Position += velocity * (float)delta;
+
+		// Clamp to screen bounds
+		Position = new Vector2(
+			x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
+			y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
+		);
+	}
 }
