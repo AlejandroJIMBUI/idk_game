@@ -108,7 +108,7 @@ Crear una experiecia de juego que combine la precisión y estetica de los juegos
 
 # Mapa de Impacto
 
-![Path of Exile](../graphics/impact_map.svg)
+![Mapa de Impacto](../graphics/impact_map.svg)
 
 ---
 <br></br>

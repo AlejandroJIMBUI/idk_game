@@ -1,0 +1,63 @@
+flowchart LR
+
+%% ACTORES
+Jugador([Actor<br>Jugador])
+Dev([Actor<br>Desarrollador])
+Tester([Actor<br>Tester])
+
+%% OBJETIVO GENERAL
+OG([Objetivo General<br>Desarrollar un videojuego ARPG de plataformas funcional<br>aplicando principios de POO])
+
+%% OBJETIVOS ESPECIFICOS
+OE1([Diseñar sistema de combate ARPG])
+OE2([Implementar sistema de progresión y leveo])
+OE3([Desarrollar niveles interactivos])
+OE4([Establecer interfaz de usuario clara])
+OE5([Evaluar rendimiento y estabilidad del juego])
+
+%% CONECTOR AND PRINCIPAL
+AND1((AND))
+
+%% REQUISITOS
+R1[[Ataque básico y habilidades]]
+R2[[Sistema de experiencia y estadísticas]]
+R3[[Plataformas y obstáculos]]
+R4[[HUD y menú pausa]]
+R5[[Rendimiento estable 60 FPS]]
+
+%% CONECTOR OR
+OR1((OR))
+
+%% RELACIONES OBJETIVOS -> AND -> OBJETIVO GENERAL
+OE1 --> AND1
+OE2 --> AND1
+OE3 --> AND1
+OE4 --> AND1
+OE5 --> AND1
+
+AND1 --> OG
+
+%% RELACION REQUISITOS
+R1 --> OE1
+R2 --> OE2
+R3 --> OE3
+R4 --> OE4
+
+%% OR PARA RENDIMIENTO
+R5 --> OR1
+Tester --> OR1
+OR1 --> OE5
+
+%% RELACION ACTORES
+Jugador --> OE1
+Jugador --> OE2
+Jugador --> OE3
+Jugador --> OE4
+
+Dev --> OE1
+Dev --> OE2
+Dev --> OE3
+Dev --> OE4
+Dev --> OE5
+
+Tester --> OE5

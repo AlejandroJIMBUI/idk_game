@@ -1,0 +1,83 @@
+flowchart LR
+
+    Problem([Problema:<br>El ARPG no logra una experiencia jugable<br>estable, desafiante y completa])
+
+%% Diseño
+    subgraph Diseño del Juego
+        D1[Mecánicas ARPG mal balanceadas]
+        D2[Sistema de progresión incompleto]
+        D3[Niveles poco desafiantes]
+        D4[Desbalance entre plataformas y combate]
+    end
+
+%% Tecnología
+    subgraph Tecnología Software
+        T1[Bugs en física o colisiones]
+        T2[Problemas de rendimiento]
+        T3[Arquitectura de código poco modular]
+        T4[IA de enemigos defectuosa]
+        T5[Errores en estados del jugador]
+    end
+
+%% Contenido
+    subgraph Contenido y Arte
+        C1[Falta de assets]
+        C2[Animaciones incompletas]
+        C3[Efectos visuales insuficientes]
+        C4[Poca variedad de enemigos]
+    end
+
+%% Proceso
+    subgraph Proceso de Desarrollo
+        P1[Mala planificación de sprints]
+        P2[Integración tardía de sistemas]
+        P3[Falta de pruebas continuas]
+        P4[Dependencias entre módulos]
+    end
+
+%% Equipo
+    subgraph Equipo
+        E1[Equipo reducido]
+        E2[Sobrecarga de tareas]
+        E3[Falta de experiencia en ciertos sistemas]
+        E4[Problemas de comunicación]
+    end
+
+%% Experiencia
+    subgraph Experiencia_del_Jugador
+        U1[Controles poco intuitivos]
+        U2[Falta de feedback visual]
+        U3[Curva de dificultad mal diseñada]
+        U4[Falta de tutorial]
+    end
+
+    D1 --> Problem
+    D2 --> Problem
+    D3 --> Problem
+    D4 --> Problem
+
+    T1 --> Problem
+    T2 --> Problem
+    T3 --> Problem
+    T4 --> Problem
+    T5 --> Problem
+
+    C1 --> Problem
+    C2 --> Problem
+    C3 --> Problem
+    C4 --> Problem
+
+    P1 --> Problem
+    P2 --> Problem
+    P3 --> Problem
+    P4 --> Problem
+
+    E1 --> Problem
+    E2 --> Problem
+    E3 --> Problem
+    E4 --> Problem
+
+    U1 --> Problem
+    U2 --> Problem
+    U3 --> Problem
+    U4 --> Problem
