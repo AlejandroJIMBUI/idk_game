@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b5d4514jverhb"]
+
+[ext_resource type="Script" uid="uid://djsjsude27ng3" path="res://sound/AmbientSound.cs" id="1_qvmxj"]
+[ext_resource type="AudioStream" uid="uid://cqr5d7p3ihvic" path="res://assets/sounds/ambient_forestSound.ogg" id="2_0euwn"]
+
+[node name="AmbientSound" type="Node" unique_id=1883421534]
+script = ExtResource("1_qvmxj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=645182833]
+stream = ExtResource("2_0euwn")
+volume_db = -12.706
+autoplay = true
+parameters/looping = true

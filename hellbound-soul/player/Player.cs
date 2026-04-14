@@ -1,42 +1,19 @@
 using Godot;
 using System;
 
-public partial class Player : Area2D
+public partial class Player : CharacterBody2D
 {
 	[Export]
-	public int Speed { get; set; } = 300; // How fast the player will move (pixels/sec).
-	public Vector2 ScreenSize; // Size of the game window.
+	public int Speed { get; set; } = 200; // Que tan rapido se mueve el personaje (pixels/sec).
+	public Vector2 ScreenSize; // Tamaño de la ventana.
 
-	private Vector2 _targetPosition;
-	private bool _isMovingToTarget = false;
-	private const float ARRIVAL_THRESHOLD = 5.0f; // Distancia a la que se considera "llegado" (5.0"f" --> se define como f para evitar errores de compilacion [f = float])
+	// Variable de clase para recordar la última dirección
+	private string lastDirection = "idle"; // "idle", "up_idle", "down_idle"
+	private bool lastFlipH = false;
 
 	public override void _Ready()
 	{
 		ScreenSize = GetViewportRect().Size;
-		_targetPosition = Position; // Inicializa el objetivo en la posicion actual
-	}
-
-	public override void _Input(InputEvent @event)
-	{
-		// Detecta si se hizo click o se mantuvo el boton izq del mouse
-		if (@event is InputEventMouseButton mouseButton)
-		{
-			if (mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
-			{
-				// Convierte el click en la posicin de la pantalla a la posicion en el mundo
-				// screen(1920*1080) --> gameCamera(same to the screen)
-				_targetPosition = GetGlobalMousePosition();
-				_isMovingToTarget = true;
-			}
-		}
-
-		// Mientras se mantiene el click izq, se sigue actualizando el objetivo en la posicion del mouse
-		if (@event is InputEventMouseMotion && Input.IsMouseButtonPressed(MouseButton.Left))
-		{
-			_targetPosition = GetGlobalMousePosition();
-			_isMovingToTarget = true;
-		}
 	}
 
 	/*
@@ -52,50 +29,54 @@ public partial class Player : Area2D
 		var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		var velocity = Vector2.Zero;
 
-		if (_isMovingToTarget)
-		{
-			Vector2 direction = _targetPosition - Position;
-			float distance = direction.Length();
+		// Lectura directa de las flechas
+		if (Input.IsActionPressed("ui_right")) velocity.X += 1;
+		if (Input.IsActionPressed("ui_left"))  velocity.X -= 1;
+		if (Input.IsActionPressed("ui_down"))  velocity.Y += 1;
+		if (Input.IsActionPressed("ui_up"))    velocity.Y -= 1;
 
-			if (distance > ARRIVAL_THRESHOLD)
-			{
-				// Cuando se avanza hacia el objetivo
-				velocity = direction.Normalized() * Speed;
-			}
-			else
-			{
-				// Cuando se llega al objetivo
-				_isMovingToTarget = false;
-				Position = _targetPosition; // Se ajusta a la posicion exacta
-			}
-		}
-
-		// --- Animation logic ---
+		// Normalizar para evitar que el movimiento diagonal sea mas rapido
+		if (velocity.Length() > 0)
+			velocity = velocity.Normalized() * Speed;
+		
+		// Logica animación y estado del movimiento
 		if (velocity.Length() > 0)
 		{
 			animatedSprite2D.Play();
-
 			if (Mathf.Abs(velocity.X) >= Mathf.Abs(velocity.Y))
 			{
-				// Horizontal movement dominates
+				// Movimiento horizontal dominante
 				animatedSprite2D.Animation = "walk";
 				animatedSprite2D.FlipV = false;
 				animatedSprite2D.FlipH = velocity.X < 0;
+
+				// Guardar para el idle
+				lastDirection = "idle";
+				lastFlipH = velocity.X < 0;
 			}
 			else
 			{
-				// Vertical movement dominates
+				// Movimiento vertical dominante
 				animatedSprite2D.FlipH = false;
 				animatedSprite2D.Animation = velocity.Y > 0 ? "down" : "up";
+
+				// Guardar para el idle
+				lastDirection = velocity.Y > 0 ? "down_idle" : "up_idle";
+				lastFlipH = false;
 			}
 		}
 		else
 		{
-			animatedSprite2D.Stop();
+			// Sin movimiento → reproducir idle según última dirección
+			animatedSprite2D.FlipH = lastFlipH;
+			animatedSprite2D.FlipV = false;
+			animatedSprite2D.Animation = lastDirection;
+			animatedSprite2D.Play();
 		}
 
 		// Apply movement
-		Position += velocity * (float)delta;
+		Velocity = velocity;
+		MoveAndSlide();
 
 		// Clamp to screen bounds
 		Position = new Vector2(
