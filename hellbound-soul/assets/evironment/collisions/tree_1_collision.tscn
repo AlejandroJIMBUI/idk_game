@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cllcwx3cx0qh8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rgjk"]
+height = 42.0
+
+[node name="collision" type="StaticBody2D" unique_id=990791279]
+
+[node name="StaticBody2D" type="CollisionShape2D" parent="." unique_id=1836757900]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6rgjk")

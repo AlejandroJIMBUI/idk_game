@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bpalgf0u4hrwp"]
+
+[ext_resource type="Script" uid="uid://boxuhuvdcfxat" path="res://enemies/WormEnemie.cs" id="1_s12qj"]
+[ext_resource type="Texture2D" uid="uid://d3opqr4ew4yad" path="res://assets/enemies/masked_man.png" id="2_s12qj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agx8e"]
+atlas = ExtResource("2_s12qj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifbe6"]
+atlas = ExtResource("2_s12qj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u00v"]
+atlas = ExtResource("2_s12qj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ius2s"]
+atlas = ExtResource("2_s12qj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsn35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agx8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifbe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u00v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ius2s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xy7sx"]
+radius = 6.0
+height = 22.0
+
+[node name="worm_enemie" type="CharacterBody2D" unique_id=2105581489]
+script = ExtResource("1_s12qj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=541817927]
+sprite_frames = SubResource("SpriteFrames_vsn35")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=199499942]
+shape = SubResource("CapsuleShape2D_xy7sx")
