@@ -11,9 +11,40 @@ public partial class Player : CharacterBody2D
 	private string lastDirection = "idle"; // "idle", "up_idle", "down_idle"
 	private bool lastFlipH = false;
 
+	// Var para configurar el radial blur
+	private Camera2D _camera;
+    private ColorRect _colorRect;
+    private ShaderMaterial _shaderMaterial;
+
 	public override void _Ready()
 	{
 		ScreenSize = GetViewportRect().Size;
+		_camera = GetNode<Camera2D>("Camera2D");
+		_colorRect = GetNode<ColorRect>("CanvasLayer/ColorRect");
+		_shaderMaterial = (ShaderMaterial)_colorRect.Material;
+
+		var canvasLayer = GetNode<CanvasLayer>("CanvasLayer");
+		canvasLayer.FollowViewportEnabled = false;
+		canvasLayer.Layer = 10;
+		canvasLayer.Offset = Vector2.Zero;
+		canvasLayer.Transform = Transform2D.Identity;
+
+		// Ajustar el ColorRect al área visible real según el zoom
+		Vector2 visibleSize = ScreenSize / _camera.Zoom;
+		_colorRect.Position = Vector2.Zero;
+		_colorRect.Size = visibleSize;
+
+		_shaderMaterial.SetShaderParameter("focus_center", new Vector2(0.5f, 0.5f));
+		_shaderMaterial.SetShaderParameter("focus_radius", 0.1f);
+		_shaderMaterial.SetShaderParameter("blur_strength", 10.0f);
+		_shaderMaterial.SetShaderParameter("softness", 0.6f);
+
+		// Escalar el CanvasLayer para que el ColorRect ocupe toda la pantalla
+		canvasLayer.Transform = new Transform2D(
+			_camera.Zoom.X, 0,
+			0, _camera.Zoom.Y,
+			0, 0
+		);
 	}
 
 	/*
@@ -78,10 +109,19 @@ public partial class Player : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 
+		/*
 		// Clamp to screen bounds
-		Position = new Vector2(
-			x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
-			y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
-		);
+        Vector2 visibleArea = ScreenSize / _camera.Zoom;
+        Position = new Vector2(
+            x: Mathf.Clamp(Position.X, visibleArea.X / 2, ScreenSize.X - visibleArea.X / 2),
+            y: Mathf.Clamp(Position.Y, visibleArea.Y / 2, ScreenSize.Y - visibleArea.Y / 2)
+        );
+
+        // Shader siempre centrado en el jugador (centro de pantalla)
+        // Con FollowViewportEnabled el jugador siempre está en el centro
+        _shaderMaterial.SetShaderParameter("focus_center", new Vector2(0.5f, 0.5f));
+		*/
+
+		// Clamp solo para situaciones especificas
 	}
 }

@@ -1,8 +1,3 @@
-res://enemies/enemie_1.tscn
-res://enemies/worm_enemie.tscn
-res://enemies/WormEnemie.cs
-res://levels/level_1.tscn
 res://player/Player.cs
-res://levels/AmbientSound.cs
-res://sound/ambient_sound.tscn
-res://sound/AmbientSound.cs
+res://levels/level_1.tscn
+res://player/player.gdshader

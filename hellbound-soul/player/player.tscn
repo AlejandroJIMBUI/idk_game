@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bud4xbra4mbkw" path="res://assets/player/paladin/walk/run_right.png" id="4_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://c365t6tryne7e" path="res://assets/player/paladin/idle/idle_right.png" id="4_rgyib"]
 [ext_resource type="Texture2D" uid="uid://c6j376dovo236" path="res://assets/player/paladin/idle/idle_up.png" id="6_hg6s5"]
+[ext_resource type="Shader" uid="uid://b3tvj43bur317" path="res://player/player.gdshader" id="8_rgyib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
 atlas = ExtResource("2_yw30f")
@@ -381,6 +382,32 @@ animations = [{
 radius = 6.0
 height = 28.0
 
+[sub_resource type="CSharpScript" id="CSharpScript_rgyib"]
+script/source = "using Godot;
+using System;
+
+public partial class CanvasLayer : Godot.CanvasLayer
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hg6s5"]
+shader = ExtResource("8_rgyib")
+shader_parameter/focus_radius = 0.4
+shader_parameter/softness = 0.3
+shader_parameter/blur_samples = 8
+shader_parameter/blur_strength = 6.0
+shader_parameter/focus_center = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=1644445120]
 script = ExtResource("1_rgyib")
 metadata/_edit_group_ = true
@@ -391,3 +418,17 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004656920]
 shape = SubResource("CapsuleShape2D_kb6p2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1091348041]
+script = SubResource("CSharpScript_rgyib")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=90344589]
+material = SubResource("ShaderMaterial_hg6s5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=167703119]
+zoom = Vector2(3, 3)

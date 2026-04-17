@@ -1,11 +1,14 @@
+CollisionShape2D
+StaticBody2D
+DirectionalLight2D
+Camera2D
+ColorRect
+CanvasLayer
 AudioStreamPlayer
 Node
-CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
-StaticBody2D
 TileMapLayer
 RigidBody2D
 Node2D
-Camera2D
 Area2D
